@@ -1,2 +1,2 @@
-lib/info.db
-node_modules
+lib/*.db
+node_modules/
