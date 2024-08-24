@@ -9,8 +9,8 @@ Apenas perguntas para saber qual app as pessoas gostariam de terem hoje em dia
 
 # Iniciando o Projeto
 
-npm index.js
+npm run index.js
 
 #Envs
-[Vazio]
-
+ - **PORT**=SUA PORTA
+ - **NODE_ENV**=production || devolopment

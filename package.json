@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "node index.js",
     "start": "NODE_ENV=production node index.js",
     "build": "npm run lint && npm run minify && npm run copy-assets",
     "lint": "eslint .",
