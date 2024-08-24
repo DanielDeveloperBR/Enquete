@@ -1,5 +1,6 @@
 # Enquete
-Apenas perguntas para saber qual app as pessoas gostariam de terem hoje em dia
+
+Apenas um formulário para saber qual app as pessoas gostariam de terem hoje em dia.
 
 # Dependências
 - **ejs**
@@ -10,10 +11,22 @@ Apenas perguntas para saber qual app as pessoas gostariam de terem hoje em dia
 - **terser**
 - **dotenv**
 
-# Iniciando o Projeto
+# Iniciando o Projeto em dev
 
-npm run index.js
+npm run dev
 
-#Envs
+# Iniciando em produção
+
+- **Primeiro cria o arquivo .env e coloca em production**
+
+# Envs
  - **PORT**=SUA PORTA
- - **NODE_ENV**=production || devolopment
+ - **NODE_ENV**=production
+
+# Fazendo o deploy
+
+npm run build
+
+...
+
+npm start

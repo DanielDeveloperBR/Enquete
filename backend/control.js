@@ -10,7 +10,7 @@ async function cadastrarInfo(request, response) {
         const [nome, sexo, idade, profissao, comentario] = request.body;
 
         if (!nome || !sexo || !idade || !profissao || !comentario){
-            return response.status(422).send('Erro interno no servidor. <a href=\'/\'>Clica aqui para voltar</a>');
+            return response.status(422).send(`Erro interno no servidor. <a href='/'>Clica aqui para voltar</a>`);
         }
 
         await db.run('INSERT INTO info (nome, sexo, idade, profissao, comentario) VALUES (?, ?, ?, ?, ?)', nome, sexo, idade, profissao, comentario);
