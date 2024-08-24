@@ -14,42 +14,40 @@ form.addEventListener('submit', async (e) => {
             sexo = radio.id;
         }
     });
-    
+
 
     const fields = [nome, idade, profissao, comentario];
     if (fields.some(field => field === '')) {
         alert('Preencha todos os dados!!!');
         return;
     }
-    
-    
-    if (idade <= 0 || idade >= 100){
+
+
+    if (idade <= 0 || idade >= 100) {
         alert('Digite uma idade válida');
         return;
     }
-    
-    try {
-        const response = await fetch('/cadastrar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                'nome': nome,
-                'sexo': sexo,
-                'idade': idade,
-                'profissao': profissao,
-                'comentario': comentario
-            })
-        });
 
-        if (response.ok) {
-            alert('Enquete inserida com sucesso!');
-            location.reload();
-        } else {
-            alert('Erro ao comentar!');
-        }
-    } catch (error) {
-        alert('Erro interno no servidor.');
+
+    const response = await fetch('/cadastrar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'nome': nome,
+            'sexo': sexo,
+            'idade': idade,
+            'profissao': profissao,
+            'comentario': comentario
+        })
+    })
+
+    if (response.ok) {
+        alert('Enquete inserida com sucesso!');
+        location.reload();
+    } else {
+        alert('Erro ao comentar!');
     }
-});
+
+})

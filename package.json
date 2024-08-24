@@ -1,15 +1,15 @@
 {
   "name": "enquete",
   "version": "1.0.0",
-  "description": "",
+  "description": "Apenas um form de pesquisa de enquete para saber o que as pessoas precisam como um app hoje.",
   "main": "index.js",
   "scripts": {
     "dev": "node index.js",
     "start": "NODE_ENV=production node index.js",
-   "build": "npm run minify && npm run copy-assets",
-    "lint": "eslint .",
+    "build": "NODE_ENV=production npm run lint && npm run minify && npm run copy-assets",
+    "lint": "eslint frontend/js/**/*.js",
     "minify": "mkdir -p frontend/js/minified && for f in frontend/js/*.js; do terser \"$f\" --compress --mangle --output \"frontend/js/minified/$(basename $f)\"; done",
-    "copy-assets": "cp -r frontend/ dist/",
+    "copy-assets": "cp -r frontend/ public/",
     "prestart": "npm run build"
   },
   "keywords": [],
@@ -19,12 +19,16 @@
     "compression": "^1.7.4",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "eslint": "^9.9.1",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
     "pm2": "^5.4.2",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
     "terser": "^5.31.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0"
   }
 }
