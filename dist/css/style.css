@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo);
+    background-image: linear-gradient(to top, white, var(--fundo));
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --fundo: #b3e0ff;
+    --main: #8eb8ff;
+    --botao: #ff9933;
+    --formulario: #4a90e2;
+}
+
+main,
+body,
+.formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+}
+
+img {
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    opacity: 0.8;
+    margin: auto;
+}
+p{
+    margin-top: 10px;
+}
+
+main,
+img,
+.formulario, input[type='text'], input[type='number'] textarea {
+    box-shadow: 1px 1px 1px #0000002c;
+
+}
+
+main {
+    height: 100vh;
+    min-width: 300px;
+    max-width: 1200px;
+    width: 100%;
+    background-color: var(--main);
+    border-radius: 10px;
+}
+input[type="radio"]{
+    margin-left: 2px;
+}
+.formulario {
+    border-radius: 15px;
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+    background-color: var(--formulario);
+    padding: 20px;
+}
+
+section h2,
+h1 {
+    margin: 30px auto;
+    text-align: center;
+}
+input,textarea{
+    margin: 10px;
+}
+label {
+    text-align: center;
+
+}
+
+input,
+textarea,
+button {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+button {
+    padding: 20px;
+    max-width: 150px;
+    font-weight: bolder;
+    background-color: var(--botao);
+    width: 100%;
+    font-size: 14px;
+
+}
+
+button:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+textarea {
+    padding: 20px;
+    max-width: 250px;
+    min-height: 150px;
+    max-height: 220px;
+    min-width: 250px;
+}
+
+label {
+    font-weight: 700;
+}
+
+footer {
+    margin: 20px auto;
+    padding: 6px;
+    text-align: center;
+}
+
+.sexo {
+    font-size: 12px;
+    margin: 10px auto;
+    font-weight: 300;
+}

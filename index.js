@@ -3,13 +3,17 @@ const cadastrarInfo = require('./backend/control');
 const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 3000;
+require('dotenv').config();
 
 // Configurar a view engine para EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'frontend', 'views'));
 
-// Middleware para servir arquivos estáticos
-app.use(express.static(path.join(__dirname, 'frontend')));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'dist')));
+} else {
+  app.use(express.static(path.join(__dirname, 'frontend')));
+}
 
 // Parse do corpo das requisições
 app.use(express.urlencoded({ extended: true }));

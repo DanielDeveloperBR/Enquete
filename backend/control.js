@@ -7,7 +7,7 @@ async function cadastrarInfo(request, response) {
             driver: sqlite3.Database,
         });
 
-        await db.run(`INSERT INTO info (nome, sexo, idade, profissao, comentario) VALUES (?, ?, ?, ?, ?)`, request.body.nome, request.body.sexo, request.body.idade, request.body.profissao, request.body.comentario);
+        await db.run('INSERT INTO info (nome, sexo, idade, profissao, comentario) VALUES (?, ?, ?, ?, ?)', request.body.nome, request.body.sexo, request.body.idade, request.body.profissao, request.body.comentario);
         response.send(`Usuário ${request.body.nome} inserido com sucesso.`);
         db.close();
     } catch (error) {
