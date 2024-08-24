@@ -7,13 +7,17 @@ require('dotenv').config();
 
 // Configurar a view engine para EJS
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'frontend', 'views'));
+// app.set('views', path.join(__dirname, 'frontend', 'views'));
+app.set('views', path.join(__dirname, 'dist', 'views'));
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'dist')));
-} else {
-  app.use(express.static(path.join(__dirname, 'frontend')));
 }
+// else{
+//   app.use(express.static(path.join(__dirname, 'frontend')));
+
+// }
 
 // Parse do corpo das requisições
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +30,8 @@ app.get('/', (req, res) => {
 
 // Rota para cadastrar informações
 app.post('/cadastrar', cadastrarInfo);
+
+
 
 // Iniciar o servidor
 app.listen(PORT, () => {
