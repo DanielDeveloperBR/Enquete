@@ -10,30 +10,26 @@ form.addEventListener('submit', async (e) => {
     const profissao = form.profissao.value.trim();
     const comentario = form.comentario.value.trim();
     radios.forEach(radio => {
-        radio.addEventListener('click', () => {
-            if (radio.id === 'masculino') {
-                sexo = radio.id;
-            } else if (radio.id === 'feminino') {
-                sexo = radio.id;
-            } else if (radio.id === 'outro') {
-                sexo = radio.id;
-            } else {
-                alert('Selecione um sexo,');
-            }
-        });
+        if (radio.checked) {
+            sexo = radio.id;
+        }
     });
+    
 
-    if (nome === '' || idade === '' || profissao === '' || comentario === '') {
+    const fields = [nome, idade, profissao, comentario];
+    if (fields.some(field => field === '')) {
         alert('Preencha todos os dados!!!');
         return;
     }
-    if (idade >0 && idade < 100){
+    
+    
+    if (idade <= 0 || idade >= 100){
         alert('Digite uma idade válida');
         return;
     }
-
+    
     try {
-        const response = await fetch('http://localhost:3000/cadastrar', {
+        const response = await fetch('/cadastrar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

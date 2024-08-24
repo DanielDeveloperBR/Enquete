@@ -2,8 +2,13 @@ const express = require('express');
 const cadastrarInfo = require('./backend/control');
 const app = express();
 const path = require('path');
+const compression = require('compression');
+const helmet = require('helmet');
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
+
+app.use(compression());
+app.use(helmet());
 
 // Configurar a view engine para EJS
 app.set('view engine', 'ejs');

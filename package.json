@@ -8,7 +8,7 @@
     "start": "NODE_ENV=production node index.js",
     "build": "npm run lint && npm run minify && npm run copy-assets",
     "lint": "eslint .",
-   "minify": "mkdir -p frontend/js/minified && for f in frontend/js/*.js; do terser \"$f\" --compress --mangle --output \"frontend/js/minified/$(basename $f)\"; done",
+    "minify": "mkdir -p frontend/js/minified && for f in frontend/js/*.js; do terser \"$f\" --compress --mangle --output \"frontend/js/minified/$(basename $f)\"; done",
     "copy-assets": "cp -r frontend/ dist/",
     "prestart": "npm run build"
   },
@@ -16,12 +16,15 @@
   "author": "Daniel S.",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.4",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
+    "eslint": "^9.9.1",
     "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "pm2": "^5.4.2",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
-    "eslint": "^9.9.1",
     "terser": "^5.31.6"
   }
 }
