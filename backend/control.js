@@ -7,10 +7,10 @@ async function cadastrarInfo(request, response) {
             driver: sqlite3.Database,
         });
 
-        const [nome, sexo, idade, profissao, comentario] = request.body
+        const [nome, sexo, idade, profissao, comentario] = request.body;
 
         if (!nome || !sexo || !idade || !profissao || !comentario){
-            return response.status(422).send(`Erro interno no servidor. <a href='/'>Clica aqui para voltar</a>`);
+            return response.status(422).send('Erro interno no servidor. <a href=\'/\'>Clica aqui para voltar</a>');
         }
 
         await db.run('INSERT INTO info (nome, sexo, idade, profissao, comentario) VALUES (?, ?, ?, ?, ?)', nome, sexo, idade, profissao, comentario);
@@ -18,7 +18,7 @@ async function cadastrarInfo(request, response) {
         db.close();
     } catch (error) {
         console.error('Erro:', error);
-        response.status(500).send(`Erro interno no servidor. <a href='/'>Clica aqui para voltar</a>`);
+        response.status(500).send('Erro interno no servidor. <a href=\'/\'>Clica aqui para voltar</a>');
     }
 }
 

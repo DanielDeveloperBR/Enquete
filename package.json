@@ -20,9 +20,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
-  },
-  "devDependencies": {
+    "sqlite3": "^5.1.7",
     "eslint": "^9.9.1",
     "terser": "^5.31.6"
   }
