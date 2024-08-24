@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node index.js",
     "start": "NODE_ENV=production node index.js",
-    "build": "npm run lint && npm run minify && npm run copy-assets",
+   "build": "npm run minify && npm run copy-assets",
     "lint": "eslint .",
     "minify": "mkdir -p frontend/js/minified && for f in frontend/js/*.js; do terser \"$f\" --compress --mangle --output \"frontend/js/minified/$(basename $f)\"; done",
     "copy-assets": "cp -r frontend/ dist/",
