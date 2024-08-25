@@ -5,28 +5,20 @@ Apenas um formulário para saber qual app as pessoas gostariam de terem hoje em 
 # Dependências
 - **ejs**
 - **express**
-- **sqlite**
-- **sqlite3**
-- **eslint**
+- **pg**
+- **pg-promise**
 - **terser**
 - **dotenv**
+- **helmet**
+- **compression**
+- **terser**
+- **cross-env**
 
 # Iniciando o Projeto em dev
 
 npm run dev
 
-# Iniciando em produção
-
-- **Primeiro cria o arquivo .env e coloca em production**
-
 # Envs
  - **PORT**=SUA PORTA
- - **NODE_ENV**=production
-
-# Fazendo o deploy
-
-npm run build
-
-...
-
-npm start
+ - **NODE_ENV**=dev
+ - **DATABASE_URL**=URL postgreSQL
