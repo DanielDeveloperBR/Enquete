@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "node index.js",
-    "start": "cross-env NODE_ENV=production npm run minify && npm run db && node index.js",
+    "start": "npm run db && node index.js",
     "minify": "terser ./frontend/js/formularioEnquete.js -o ./frontend/js/formularioEnquete.min.js",
     "db": "node setup-db.js",
-    "build": "cross-env NODE_ENV=production npm run minify"
+    "build": "npm run minify"
   },
   "keywords": [],
   "author": "Daniel S.",
@@ -22,8 +22,5 @@
     "pg": "^8.12.0",
     "pg-promise": "^11.9.1",
     "terser": "^5.31.6"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3"
   }
 }

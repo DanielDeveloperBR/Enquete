@@ -12,13 +12,17 @@ Apenas um formulário para saber qual app as pessoas gostariam de terem hoje em 
 - **helmet**
 - **compression**
 - **terser**
-- **cross-env**
 
-# Iniciando o Projeto em dev
+# Iniciando o Projeto
 
-npm run dev
+- Precisa ter o banco de dados postgreSQL
+
+# Entra no caminho do projeto e coloca esse comando
+
+- $ npm run dev
 
 # Envs
- - **PORT**=SUA PORTA
- - **NODE_ENV**=dev
- - **DATABASE_URL**=URL postgreSQL
+
+- **PORT**=SUA PORTA
+- **NODE_ENV**=dev
+- **DATABASE_URL**=URL postgreSQL
