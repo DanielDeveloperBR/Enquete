@@ -4,8 +4,7 @@
   "description": "Apenas um form de pesquisa de enquete para saber o que as pessoas precisam como um app hoje.",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
-    "start": "NODE_ENV=production node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Daniel S.",
@@ -16,13 +15,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
-    "pm2": "^5.4.2",
     "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7",
-    "terser": "^5.31.6"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.9.1",
-    "globals": "^15.9.0"
+    "sqlite3": "^5.1.7"
   }
 }
