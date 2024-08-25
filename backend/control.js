@@ -1,9 +1,10 @@
 const sqlite3 = require("sqlite3");
 const { open } = require("sqlite");
+const path  = require("path");
 async function cadastrarInfo(request, response) {
     try {
         const db = await open({
-            filename: "./lib/info.db",
+            filename: path.join(__dirname, 'lib', 'info.db'),
             driver: sqlite3.Database,
         });
 

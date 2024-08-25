@@ -4,7 +4,9 @@
   "description": "Apenas um form de pesquisa de enquete para saber o que as pessoas precisam como um app hoje.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "dev": "node index.js",
+    "start": "node index.js && npm run minify",
+    "minify": "NODE_ENV=production terser ./frontend/js/formularioEnquete.js -o ./frontend/js/formularioEnquete.min.js"
   },
   "keywords": [],
   "author": "Daniel S.",
@@ -16,6 +18,7 @@
     "express": "^4.19.2",
     "helmet": "^7.1.0",
     "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "terser": "^5.31.6"
   }
 }
