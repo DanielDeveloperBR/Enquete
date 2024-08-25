@@ -7,7 +7,7 @@ async function cadastrarInfo(request, response) {
             driver: sqlite3.Database,
         });
 
-        const [nome, sexo, idade, profissao, comentario] = request.body;
+        const {nome, sexo, idade, profissao, comentario} = request.body;
 
         if (!nome || !sexo || !idade || !profissao || !comentario){
             return response.status(422).send(`Erro interno no servidor. <a href="/">Clica aqui para voltar</a>`);
