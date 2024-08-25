@@ -4,11 +4,10 @@
   "description": "Apenas um form de pesquisa de enquete para saber o que as pessoas precisam como um app hoje.",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
-    "start": "npm run db && node index.js",
+    "start": "node index.js",
     "minify": "terser ./frontend/js/formularioEnquete.js -o ./frontend/js/formularioEnquete.min.js",
     "db": "node setup-db.js",
-    "build": "npm run minify"
+    "build": "npm run minify && npm run db"
   },
   "keywords": [],
   "author": "Daniel S.",
