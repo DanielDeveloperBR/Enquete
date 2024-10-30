@@ -55,7 +55,6 @@ img,
 }
 
 main {
-    height: 100vh;
     min-width: 300px;
     max-width: 1200px;
     width: 100%;

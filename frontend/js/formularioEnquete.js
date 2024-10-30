@@ -1,7 +1,11 @@
 const form = document.getElementById('enquete');
 const radios = document.querySelectorAll('input[name="sexo"]');
 let sexo = 'Masculino'
-
+radios.forEach(radio => {
+    radio.addEventListener('click', () => {
+        sexo = radio.id;
+    });
+});
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -9,32 +13,11 @@ form.addEventListener('submit', async (e) => {
     const idade = form.idade.value.trim();
     const profissao = form.profissao.value.trim();
     const comentario = form.comentario.value.trim();
-    radios.forEach(radio => {
-        radio.addEventListener('click', () => {
-            if (radio.id === 'masculino') {
-                console.log('clicou no ' + radio.id)
-                sexo = radio.id
-            } else if (radio.id === 'feminino') {
-                console.log('clicou no ' + radio.id)
-                sexo = radio.id
-            } else if (radio.id === 'outro') {
-                console.log('clicou no ' + radio.id)
-                sexo = radio.id
-            } else {
-                alert('Selecione um sexo,')
-            }
-        })
-    });
 
-    if (nome === '' || idade === '' || profissao === '' || comentario === '') {
+    if (nome === '' || idade === '' || comentario === '') {
         alert('Preencha todos os dados!!!');
         return;
     }
-    if (idade >0 && idade < 100){
-        alert('Digite uma idade válida')
-        return
-    }
-
     try {
         const response = await fetch('http://localhost:3000/cadastrar', {
             method: 'POST',
